@@ -46,11 +46,11 @@ async function main() {
     
     // 查询部署者余额
     const deployerBalance = await token.read.balanceOf([deployer.account.address]);
-    console.log(`   部署者余额: ${formatEther(deployerBalance)} ETH`);
+    console.log(`   部署者余额: ${formatEther(deployerBalance as bigint)} ETH`);
     
     // 查询总供应量
     const readTotalSupply = await token.read.totalSupply();
-    console.log(`   总供应量: ${formatEther(readTotalSupply)} ETH`);
+    console.log(`   总供应量: ${formatEther(readTotalSupply as bigint)} ETH`);
     
     // 查询代币信息
     const name = await token.read.name();
@@ -75,8 +75,8 @@ async function main() {
     console.log(`\n📝 代币信息:`);
     console.log(`   合约地址: ${token.address}`);
     console.log(`   代币名称: ${tokenName} (${tokenSymbol})`);
-    console.log(`   总供应量: ${formatEther(readTotalSupply)} myETH`);
-    console.log(`   部署者余额: ${formatEther(deployerBalance)} myETH`);
+    console.log(`   总供应量: ${formatEther(readTotalSupply as bigint)} myETH`);
+    console.log(`   部署者余额: ${formatEther(deployerBalance as bigint)} myETH`);
     
     console.log(`\n🔗 相关链接:`);
     console.log(`   Etherscan: https://sepolia.etherscan.io/address/${token.address}`);

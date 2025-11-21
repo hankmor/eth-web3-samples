@@ -53,11 +53,11 @@ async function main() {
   const deployerBalance = await token.read.balanceOf([
     deployer.account.address,
   ]);
-  console.log(`   部署者余额: ${formatEther(deployerBalance)} Base ETH`);
+  console.log(`   部署者余额: ${formatEther(deployerBalance as bigint)} Base ETH`);
 
   // 查询总供应量
   const readTotalSupply = await token.read.totalSupply();
-  console.log(`   总供应量: ${formatEther(readTotalSupply)} Base ETH`);
+  console.log(`   总供应量: ${formatEther(readTotalSupply as bigint)} Base ETH`);
 
   // 查询代币信息
   const name = await token.read.name();
@@ -87,8 +87,8 @@ async function main() {
   console.log(`\n📝 代币信息:`);
   console.log(`   合约地址: ${token.address}`);
   console.log(`   代币名称: ${tokenName} (${tokenSymbol})`);
-  console.log(`   总供应量: ${formatEther(readTotalSupply)} myBaseETH`);
-  console.log(`   部署者余额: ${formatEther(deployerBalance)} myBaseETH`);
+  console.log(`   总供应量: ${formatEther(readTotalSupply as bigint)} myBaseETH`);
+  console.log(`   部署者余额: ${formatEther(deployerBalance as bigint)} myBaseETH`);
 
   console.log(`\n🔗 相关链接:`);
   console.log(

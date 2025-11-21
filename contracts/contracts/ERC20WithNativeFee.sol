@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.28;
 
-import "./ERC20.sol";
+import "./HandwrittenERC20.sol";
 
 /**
  * ERC20 代币，转账时收取原生代币（BNB/ETH）作为手续费
